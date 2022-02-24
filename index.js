@@ -1,15 +1,15 @@
 let database = {
-    game1: {
-        '50.000': 100,
-        '100.000': 150,
-        '150.000': 200,
-    },
+    '50.000': 100,
+    '100.000': 150,
+    '150.000': 200,
 }
 
-let nominalInput=[]
-let umur=0
-let game='game1'
-let userName="romzi"
+// let nominalInput = []
+for (let i = 0; i < nominalInput.length; i++) {
+    const element = nominalInput[i];
+}
+let umur = 19
+let userName = "romzi"
 
 function checkUmur(umur) {
     if (umur > 18) {
@@ -26,43 +26,37 @@ function splitDot(str) {
         }
     }
     // console.log(result);
-    return result*1
+    return result * 1
 }
-
-
-
-function prosesTransaksi(nama, game, beli, umur, database) {
+function prosesTransaksi(nama, /**beli*/ umur, database) {
     if (!nama) {
         return "masukkan nama"
     }
     let restriction = checkUmur(umur)
-    let totalNominal = 0
+    // let totalNominal = 0
     let totalCash = 0
-    
+
     if (restriction) {
         let cap = 50000
         for (let i = 0; i < beli.length; i++) {
             const element = beli[i];
-            let nominalFormater = splitDot(element)
-            if (totalNominal<cap) {
-                totalNominal += nominalFormater
-                totalCash += database[game][element]
+            // let nominalFormater = splitDot(element)
+            if (totalCash < cap) {
+                // totalNominal += nominalFormater
+                totalCash += database[element]
             }
         }
-    } else{
+    } else {
         for (let i = 0; i < beli.length; i++) {
             const element = beli[i];
-            totalCash += database[game][element]
-            let nominalFormater = splitDot(element)
-            totalNominal += nominalFormater
+            totalCash += database[element]
+            // let nominalFormater = splitDot(element)
+            // totalNominal += nominalFormater
         }
     }
-   
-    let numberFormat=(totalNominal/1000).toFixed(3)
-    console.log(numberFormat);
+    // let numberFormat = (totalNominal / 1000).toFixed(3)
+    // console.log(numberFormat);
     console.log(totalCash);
-
-
 }
 
-console.log(prosesTransaksi(nama, game, nominalInput, umur, database))
+console.log(prosesTransaksi(nama, /**nominalInput*/ umur, database))
