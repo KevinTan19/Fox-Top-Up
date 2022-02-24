@@ -9,31 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header id="header">
         <p id="web-name">FoxTopUp</p>
+        
     </header>
+    <p class="headerText">Silahkan Pilih game yang anda inginkan</p>
+    
+
     <div id="icon-game">
-        <!-- <button id="test" class="logo pubg" src=""></button> -->
-        <!-- <button class="logo ff" src="asset/ff.png"></button> -->
-        <!-- <button class="logo ml" src="asset/ml.jpeg"></button> -->
+     
 
-        <input type="radio" id="checkbox1"  />
-        <label for="checkbox1"><img src="asset/pubg.png" class="logo" /></label>
-        <input type="radio" id="checkbox2"  />
-        <label for="checkbox2"><img src="asset/ff.png" class="logo" /></label>
-        <input type="radio" id="checkbox3"  />
-        <label for="checkbox3"><img src="asset/ml.jpeg" class="logo" /></label>
+        <div class="cc-selector">
+            <input type="radio" id="pubg" type="radio" name="game" value="pubg" />
+            <label class="gameCheckbox pubg" for="pubg"></label>
+            <input id="ff" type="radio" name="game" value="ff" />
+            <label class="gameCheckbox ff"for="ff"></label>
+            <input id="ml" type="radio" name="game" value="ml" />
+            <label class="gameCheckbox ml"for="ml"></label>
+        </div>
 
-
+        
 
     </div>
     <form id="form-input">
+        <p class="tulisan-konten">Masukan id dan umur</p>
         <input class="text-input" type="text" placeholder="ID">
         <br>
         <input class="text-input" type="number" placeholder="UMUR">
         <br>
         <br>
-        <input class="button" type="submit" value="Mulai Transaksi">
+        <input class="buttonMulai" type="submit" value="Mulai Transaksi">
     </form>
 </body>
 
