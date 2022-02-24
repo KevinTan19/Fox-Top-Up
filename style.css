@@ -1,0 +1,139 @@
+body {
+  background-image: url(asset/bg.jpeg);
+  background-position: center;
+  background-size: cover;
+  margin: 0px;
+}
+#header {
+  background-color: aliceblue;
+}
+#web-name {
+  text-align: center;
+  color: maroon;
+  background: linear-gradient(
+    90deg,
+    rgba(152, 231, 255, 1) 0%,
+    rgba(233, 152, 224, 1) 100%
+  );
+  font-size: 50px;
+  margin: 0px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.pubg {
+  background-image: url(asset/pubg.png);
+  background-size: contain;
+  border: none;
+}
+.ff {
+  background-image: url(asset/ff.png);
+  background-size: contain;
+  border: none;
+}
+.ml {
+  background-image: url(asset/ml.jpeg);
+  background-size: contain;
+  border: none;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+}
+#icon-game {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+#form-input {
+  background: linear-gradient(
+    90deg,
+    rgba(152, 231, 255, 1) 0%,
+    rgba(233, 152, 224, 1) 100%
+  );
+  margin: auto;
+  margin-bottom: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 80px 30px 80px 30px;
+  border-radius: 20px;
+}
+.text-input {
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: "Chakra Petch", sans-serif;
+  border: none;
+  margin-bottom: 5px;
+}
+.button {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgb(207, 152, 255) 0%,
+    rgb(226, 233, 152) 100%
+  );
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label::before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border: none;
+}
+
+:checked + label::before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}
