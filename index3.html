@@ -14,7 +14,17 @@
         <p id="web-name">FoxTopUp</p>
         
     </header>
-    <p class="headerText">Selamat anda telah berhasil Top Up sebanyak .... diamond</p>
+    <p class="finalHeader">Selamat anda telah berhasil Top Up sebesar <span id="selectedDiamond"></span>🔥🔥🔥</p>
+    <form action="index.html" class="contentCentered">
+        <input  onclick="clearStorage()" id="kembaliKeAwal" class="buttonPrime" type="submit" value="Kembali ke Halaman Awal">
+       </form>
 </body>
-<script src="index.js"></script>
+<script >
+    let getDiamonds = document.getElementById('selectedDiamond').innerHTML = localStorage.getItem('valueDiamond')
+    function clearStorage(){
+        localStorage.clear()
+
+    }
+
+</script>
 </html>

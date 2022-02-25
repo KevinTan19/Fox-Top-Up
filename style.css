@@ -180,3 +180,22 @@ body {
 #lakukanPembayaran {
   margin-bottom: 30px;
 }
+.ilang {
+  display: none;
+}
+.finalHeader {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Chakra Petch", sans-serif;
+  color: royalblue;
+  background: linear-gradient(
+    90deg,
+    rgb(152, 162, 255) 0%,
+    rgb(238, 146, 207) 100%
+  );
+  width: 20%;
+  margin: auto;
+  margin-top: 200px;
+  border-radius: 39px;
+  padding: 20px;
+}

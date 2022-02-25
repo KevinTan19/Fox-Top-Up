@@ -11,10 +11,16 @@
 
     <script >
         function passValue(){
+
             let nama = document.getElementById('inputNama').value
             let id = document.getElementById("inputId").value
             let umur = document.getElementById('inputUmur').value
             let game = document.querySelector('input[name="game"]:checked').value;
+            if(nama === null){
+                
+                alert('nama harus dimasukan')
+
+            }
             localStorage.setItem('valueGame', game)
             localStorage.setItem('valueNama', nama)
             localStorage.setItem('valueId',id)
