@@ -25,28 +25,28 @@
         <img id="imgGame" >
     </div>
     <div class="contentCentered">
-    <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp50" value="50000" >
+    <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp50" value="Rp.50.000" >
     <label class="btn btn-primary radio-diamond" for="topUp50">50 <br> Diamonds</label>
-    <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp100" value="100000" >
+    <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp100" value="Rp.100.000" >
     <label class="btn btn-primary radio-diamond" for="topUp100">100 <br> Diamonds</label>
-    <input onclick="diamonSelected()" type="radio" class="btn-check" name="diamond" id="topUp150" value="Rp.150000" >
+    <input onclick="diamonSelected()" type="radio" class="btn-check" name="diamond" id="topUp150" value="Rp.150.000" >
     <label class="btn btn-primary radio-diamond" for="topUp150">150 <br> Diamonds</label>
    </div>
    <div id="showHarga" class="contentCentered">
-    <p  class="tulisanTotal">  Total pembayaran anda<br><span id="totalPembayaran"></span></p>
+    <p  class="tulisanTotal"><span id="ngilang" class="">  Total pembayaran anda</span><br><span id="totalPembayaran"></span></p>
 
 
    </div>
   
-   <div class="contentCentered">
-    <input id="lakukanPembayaran" class="buttonPrime" type="submit" value="Lakukan Pembayaran">
-   </div>
+   <form action="index3.html" class="contentCentered">
+    <input  onclick="submitPembayaran()" id="lakukanPembayaran" class="buttonPrime" type="submit" value="Lakukan Pembayaran">
+   </form>
 
 </body>
 <script >
     let passedNama = document.getElementById('passedNama').innerHTML = localStorage.getItem('valueNama')
 
-    // let passedId = document.getElementById('passedId').innerHTML =  localStorage.getItem('valueId')
+
     let passedUmur = document.getElementById('passedUmur').innerHTML = localStorage.getItem('valueUmur')
 
     let getGame = localStorage.getItem('valueGame')
@@ -54,15 +54,27 @@
     let passedGame = document.getElementById('imgGame').classList.add(getGame)
 
     function submitPembayaran(){
-        let submitBayar
+
+
+        let selectedDiamonds = document.querySelector('input[name="diamond"]:checked').value;
+        localStorage.setItem('valueDiamond', selectedDiamonds)
+        
+        let submitBayar = document.getElementById('lakukanPembayaran')
+        let checked = document.getElementsByName('diamond').value
+
+        if(checked === undefined){
+         let totalPembayaran = document.getElementById('totalPembayaran').innerHTML = `Harap Pilih Diamond Terlebih Dahulu`
+         document.getElementById('ngilang').classList.add('ilang')
+
+        }
+        
+        return false
     }
     
     function diamonSelected(){
 
         let totalPembayaran = document.getElementById('totalPembayaran').innerText = document.querySelector('input[name="diamond"]:checked').value;
-
-
-
+        document.getElementById('ngilang').classList.remove('ilang')
 
     }
 
