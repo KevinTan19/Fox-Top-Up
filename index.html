@@ -16,11 +16,7 @@
             let id = document.getElementById("inputId").value
             let umur = document.getElementById('inputUmur').value
             let game = document.querySelector('input[name="game"]:checked').value;
-            if(nama === null){
-                
-                alert('nama harus dimasukan')
-
-            }
+            
             localStorage.setItem('valueGame', game)
             localStorage.setItem('valueNama', nama)
             localStorage.setItem('valueId',id)
@@ -41,25 +37,26 @@
     <div id="icon-game">
      
 
-        <div class="cc-selector">
-            <input type="radio" id="pubg" type="radio" name="game" value="pubg" />
+        
+
+        
+
+    </div>
+    <form id="form-input" action="index2.html">
+        <div id="cc-selector">
+            <input type="radio" id="pubg" type="radio" name="game" value="pubg" required />
             <label class="gameCheckbox pubg" for="pubg"></label>
             <input id="ff" type="radio" name="game" value="ff" />
             <label class="gameCheckbox ff"for="ff"></label>
             <input id="ml" type="radio" name="game" value="ml" />
             <label class="gameCheckbox ml"for="ml"></label>
         </div>
-
-        
-
-    </div>
-    <form id="form-input" action="index2.html">
         <p class="tulisan-konten">Masukan id dan umur</p>
-        <input id="inputNama" class="text-input" type="text" placeholder="Nama">
+        <input id="inputNama" class="text-input" type="text" placeholder="Nama" required>
         <br>
-        <input id="inputId" class="text-input" type="text" placeholder="ID">
+        <input id="inputId" class="text-input" type="text" placeholder="ID" required>
         <br>
-        <input id = "inputUmur" class="text-input" type="number" placeholder="Umur">
+        <input id = "inputUmur" class="text-input" type="number" placeholder="Umur" required>
         <br>
         <br>
         <input class="buttonPrime" type="submit" value="Mulai Transaksi" onclick="passValue();">
