@@ -7,14 +7,67 @@
     <title>Document</title>
     <link href="style.css" rel="stylesheet" >
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
 </head>
 <body>
     <header id="header">
         <p id="web-name">FoxTopUp</p>
-        
 
     </header>
+    <p id="helloName" class="headerText"> hello <span  id="passedNama"></span></p>
+    <p id="helloUmur" class="headerText"> umur kamu <span id="passedUmur"></span></p>
+
     <p class="headerText">Silahkan Pilih nominal Top Up yang anda inginkan</p>
+
+    
+    <div class="contentCentered">
+        <img id="imgGame" >
+    </div>
+    <div class="contentCentered">
+    <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp50" value="50000" >
+    <label class="btn btn-primary radio-diamond" for="topUp50">50 <br> Diamonds</label>
+    <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp100" value="100000" >
+    <label class="btn btn-primary radio-diamond" for="topUp100">100 <br> Diamonds</label>
+    <input onclick="diamonSelected()" type="radio" class="btn-check" name="diamond" id="topUp150" value="Rp.150000" >
+    <label class="btn btn-primary radio-diamond" for="topUp150">150 <br> Diamonds</label>
+   </div>
+   <div id="showHarga" class="contentCentered">
+    <p  class="tulisanTotal">  Total pembayaran anda<br><span id="totalPembayaran"></span></p>
+
+
+   </div>
+  
+   <div class="contentCentered">
+    <input id="lakukanPembayaran" class="buttonPrime" type="submit" value="Lakukan Pembayaran">
+   </div>
+
 </body>
-<script src="index.js"></script>
+<script >
+    let passedNama = document.getElementById('passedNama').innerHTML = localStorage.getItem('valueNama')
+
+    // let passedId = document.getElementById('passedId').innerHTML =  localStorage.getItem('valueId')
+    let passedUmur = document.getElementById('passedUmur').innerHTML = localStorage.getItem('valueUmur')
+
+    let getGame = localStorage.getItem('valueGame')
+
+    let passedGame = document.getElementById('imgGame').classList.add(getGame)
+
+    function submitPembayaran(){
+        let submitBayar
+    }
+    
+    function diamonSelected(){
+
+        let totalPembayaran = document.getElementById('totalPembayaran').innerText = document.querySelector('input[name="diamond"]:checked').value;
+
+
+
+
+    }
+
+
+    
+    
+    </script>
 </html>
