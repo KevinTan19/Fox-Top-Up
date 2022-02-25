@@ -20,11 +20,14 @@
        </form>
 </body>
 <script >
-    let getDiamonds = document.getElementById('selectedDiamond').innerHTML = localStorage.getItem('valueDiamond')
+    
+    let passdBuy=localStorage.getItem('totalBayar')
+    let formatUang='Rp '+(passdBuy/1000).toFixed(3)
+    let getDiamonds = document.getElementById('selectedDiamond').innerHTML = formatUang
     function clearStorage(){
         localStorage.clear()
-
     }
+
 
 </script>
 </html>
